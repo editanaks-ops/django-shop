@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Магазин{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'store/style.css' %}">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="{% url 'product_list' %}">🛒 Мой магазин</a>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">© {{ now|date:"Y" }}</div>
+  </footer>
+</body>
+</html>
